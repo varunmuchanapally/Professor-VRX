@@ -1,0 +1,6 @@
+Flask==3.0.0
+requests==2.31.0
+PyMuPDF==1.23.5
+sounddevice==0.4.6
+scipy==1.13.1
+numpy==1.26.4
