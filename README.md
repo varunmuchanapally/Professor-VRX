@@ -1,7 +1,7 @@
 # Professor-VRX
-# 🧠 Professor Polyglot – Multilingual Voice Explainer
+# 🧠 Professor VRX – Multilingual Voice Explainer
 
-Professor Polyglot is an interactive Flask-based web application that allows users to input text, receive a clear and beginner-friendly explanation from Google's Gemini model, and listen to that explanation spoken aloud in the selected language using Google Text-to-Speech (TTS).
+Professor VRX is an interactive Flask-based web application that allows users to input text, receive a clear and beginner-friendly explanation from Google's Gemini model, and listen to that explanation spoken aloud in the selected language using Google Text-to-Speech (TTS).
 
 ---
 
@@ -13,7 +13,6 @@ Professor Polyglot is an interactive Flask-based web application that allows use
   - English 🇺🇸
   - Spanish 🇪🇸
   - Japanese 🇯🇵
-  - Telugu 🇮🇳
   - ...and more!
 - 🔊 Audio player embedded in the UI
 - 🟢 Live animated sphere that reacts while audio is playing
@@ -36,7 +35,7 @@ Professor Polyglot is an interactive Flask-based web application that allows use
 
 ```bash
 git clone https://github.com/your-username/professor-polyglot.git
-cd professor-polyglot
+cd vrx
 
 2. Create and activate a virtual environment
 python -m venv venv
