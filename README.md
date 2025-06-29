@@ -30,10 +30,10 @@ Professor VRX is an interactive Flask-based web application that allows users to
 ---
 
 ## 🛠️ Installation
+```bash
 
 1. Clone the repository
 
-```bash
 git clone https://github.com/varunmuchanapally/Professor-VRX.git
 cd vrx
 
