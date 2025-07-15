@@ -5,11 +5,9 @@ import os
 
 app = Flask(__name__)
 
-# === 🔑 API Keys ===
 GEMINI_API_KEY = "AIzaSyCqJ-oM6-bEzlc5F14mxm3QRnEevJHnqMk"
 GOOGLE_TTS_API_KEY = "AIzaSyC5Ldx6r3EwhR2gE8tv7sJPAId5Zf4F8Lw"
 
-# === 🌐 Supported Languages ===
 LANGUAGE_CODES = {
     "English": ("en-US", "en-US-Wavenet-D"),
     "Spanish": ("es-ES", "es-ES-Wavenet-B"),
@@ -20,15 +18,12 @@ LANGUAGE_CODES = {
     "Chinese": ("cmn-CN", "cmn-CN-Wavenet-A"),
 }
 
-# === 📁 Ensure static/ exists ===
 os.makedirs("static", exist_ok=True)
 
-# === 🏠 Home Route ===
 @app.route("/")
 def index():
     return render_template("index.html", languages=LANGUAGE_CODES.keys())
 
-# === 🔊 TTS Processing Route ===
 @app.route("/speak", methods=["POST"])
 def speak():
     try:
