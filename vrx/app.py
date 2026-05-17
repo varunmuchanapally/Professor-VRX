@@ -5,8 +5,8 @@ import os
 
 app = Flask(__name__)
 
-GEMINI_API_KEY = "AIzaSyCqJ-oM6-bEzlc5F14mxm3QRnEevJHnqMk"
-GOOGLE_TTS_API_KEY = "AIzaSyC5Ldx6r3EwhR2gE8tv7sJPAId5Zf4F8Lw"
+GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
+GOOGLE_TTS_API_KEY = os.getenv("GOOGLE_TTS_API_KEY")
 
 LANGUAGE_CODES = {
     "English": ("en-US", "en-US-Wavenet-D"),
@@ -89,10 +89,13 @@ def speak():
             }
         }
 
-        tts_response = requests.post(tts_url, headers={"Content-Type": "application/json"}, json=tts_payload)
+        tts_response = requests.post(tts_url, headers={"Content-Type": "application/json"}, json=tts_payload, verify=True)
         tts_response.raise_for_status()
 
-        audio_content = tts_response.json()["audioContent"]
+        audio_content = tts_response.json().get("audioContent")
+        if not audio_content:
+            return jsonify({"error": "TTS API returned no audio content."}), 500
+
         audio_path = os.path.join("static", "response.mp3")
 
         with open(audio_path, "wb") as f:
